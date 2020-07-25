@@ -424,8 +424,14 @@
                 case 0:
                     // trigger UI Update
                     this.revealSquare()
-                    // reveal neighbors
-                    this.revealNeighbors()
+                    
+                    if (this.parent.checkForWin()) {
+                        console.log("WINNER!!!!");
+                        this.parent.end(GAME_OVER_CLASSES.WIN);
+                    } else {
+                        // reveal neighbors
+                        this.revealNeighbors();
+                    }
 
                     break;
                 default:
